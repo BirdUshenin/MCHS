@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "600541393375",
+    "firebase_url": "https://mshd-9b9d6-default-rtdb.firebaseio.com",
+    "project_id": "mshd-9b9d6",
+    "storage_bucket": "mshd-9b9d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600541393375:android:47896e9218bed06b95d46a",
+        "android_client_info": {
+          "package_name": "com.example.mchs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNYGDwefxeeA5zr1TTM9r3Rg3phY8YVhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
