@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="options">
+        <item>Частное домовладение</item>
+        <item>Многоквартирный дом</item>
+        <item>Патрулирование территории</item>
+        <item>Сход с населением</item>
+        <item>Межведомственная комиссия</item>
+        <item>Выступление в СМИ</item>
+        <item>Публикация в социальной сети</item>
+    </string-array>
+</resources>
+
+
+

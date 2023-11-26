@@ -2,6 +2,8 @@ package com.example.mchs;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView profileName, profileEmail, profileUsername, profilePassword;
     TextView titleName, titleUsername;
-    Button editProfile;
+    Button editProfile, buttonToForm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +36,34 @@ public class MainActivity extends AppCompatActivity {
         titleName = findViewById(R.id.titleName);
         titleUsername = findViewById(R.id.titleUsername);
         editProfile = findViewById(R.id.editButton);
+        buttonToForm = findViewById(R.id.buttonToForm);
         showAllUserData();
+
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 passUserData();
             }
         });
+        buttonToForm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddItemActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+//    public void loadAddItemFragment(){
+//        AddItemFragment addItemFragment = new AddItemFragment();
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.fragmentContainer, addItemFragment);
+//        fragmentTransaction.addToBackStack(null);
+//        fragmentTransaction.commit();
+//    }
+
+
 
     public void showAllUserData(){
         Intent intent = getIntent();
@@ -81,4 +103,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
