@@ -14,4 +14,4 @@
 
 <h2>🛡️ License:</h2>
 
-This project is licensed under the MCHS Fires
+This project is licensed under the MCHS Fires 2024
