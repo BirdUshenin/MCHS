@@ -12,7 +12,7 @@
 
 <img src="" alt="project-screenshot" width="400" height="400/">
 
-<p align="center"><img src="https://i.ibb.co/BBSjpCm/Pics-Art-11-28-07-23-27.jpg (https://i.ibb.co/6FfbMW2/Pics-Art-11-28-07-23-27.jpg)" alt="project-screenshot" width="400" height="400/"></p>
+<img src="https://ibb.co/fHPtgxb" alt="project-screenshot" width="400" height="400/">
 
 <img src="https://i.ibb.co/Fq6gKfb/20231128-191319.jpg" alt="project-screenshot" width="400" height="400/">
 
