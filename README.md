@@ -6,7 +6,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<p align="center"> <img src="https://i.ibb.co/BBSjpCm/Pics-Art-11-28-07-23-27.jpg" alt="project-screenshot" width="800" height="300/"> </p>
+<p align="center"> <img src="https://i.ibb.co/BBSjpCm/Pics-Art-11-28-07-23-27.jpg" alt="project-screenshot" width="500" height="500/"> </p>
 
 <p align="center"> <img src="https://i.ibb.co/Fq6gKfb/20231128-191319.jpg" alt="project-screenshot" width="400" height="400/"> </p>
 
