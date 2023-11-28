@@ -10,7 +10,7 @@
 
 <p align="center"> <img src="https://i.ibb.co/Fq6gKfb/20231128-191319.jpg" alt="project-screenshot" width="400" height="300/"> </p>
 
-<p align="center"> <img src="https://i.ibb.co/R3wCS7B/20231128-191448.jpg" alt="project-screenshot" width="800" height="220/"> </p>
+<p align="center"> <img src="https://i.ibb.co/R3wCS7B/20231128-191448.jpg" alt="project-screenshot" width="400" height="120/"> </p>
 
 <h2>🛡️ License:</h2>
 
