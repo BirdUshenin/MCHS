@@ -1,4 +1,4 @@
-# MCHS
+
 <h1 align="center" id="title">MCHS</h1>
 
 <p align="center"><img src="https://toplogos.ru/images/logo-mchs.jpg" alt="project-image"></p>
