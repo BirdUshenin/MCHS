@@ -1,7 +1,4 @@
-package com.example.mchs;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.mchs.presentation;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +8,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mchs.R;
+import com.example.mchs.domain.EditProfile;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -90,7 +92,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
-    public void showAllUserData(){
+    public void showAllUserData() {
         Intent intent = getIntent();
         String nameUser = intent.getStringExtra("name");
         String emailUser = intent.getStringExtra("email");
@@ -103,14 +105,15 @@ public class ProfileActivity extends AppCompatActivity {
         profileUsername.setText(usernameUser);
         profilePassword.setText(passwordUser);
     }
-    public void passUserData(){
+
+    public void passUserData() {
         String userUsername = profileUsername.getText().toString().trim();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
         Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
+                if (snapshot.exists()) {
                     String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
                     String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
                     String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
@@ -123,6 +126,7 @@ public class ProfileActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }

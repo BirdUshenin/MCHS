@@ -1,6 +1,4 @@
-package com.example.mchs;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.mchs.presentation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +8,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mchs.R;
+import com.example.mchs.data.HelperClass;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
