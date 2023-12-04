@@ -41,7 +41,7 @@
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Имя"
+                android:hint="Должность"
                 android:drawableLeft="@drawable/person"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
@@ -66,7 +66,7 @@
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
-                android:hint="Имя пользователя"
+                android:hint="ФИО"
                 android:drawableLeft="@drawable/profile"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>

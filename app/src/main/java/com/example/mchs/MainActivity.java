@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     public Boolean validateUsername() {
         String val = loginUsername.getText().toString();
         if (val.isEmpty()) {
-            loginUsername.setError("Username cannot be empty");
+            loginUsername.setError("ФИО не может быть пустым");
             return false;
         } else {
             loginUsername.setError(null);
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     public Boolean validatePassword(){
         String val = loginPassword.getText().toString();
         if (val.isEmpty()) {
-            loginPassword.setError("Password cannot be empty");
+            loginPassword.setError("Пароль не может быть пустым");
             return false;
         } else {
             loginPassword.setError(null);
@@ -105,11 +105,11 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
 
                     } else {
-                        loginPassword.setError("Invalid Credentials");
+                        loginPassword.setError("Неверные учетные данные");
                         loginPassword.requestFocus();
                     }
                 } else {
-                    loginUsername.setError("User does not exist");
+                    loginUsername.setError("Пользователя не существует");
                     loginUsername.requestFocus();
                 }
             }
