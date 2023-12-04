@@ -1,4 +1,4 @@
-package com.example.mchs;
+package com.example.mchs.presentation;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -27,6 +27,8 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.mchs.R;
+import com.example.mchs.presentation.ProfileActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -108,7 +110,6 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         loading.dismiss();
-                        // Обработка ошибки
                         Toast.makeText(requireActivity(), "Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }

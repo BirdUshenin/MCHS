@@ -5,35 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
-    tools:context=".AddItemActivity">
+    tools:context=".presentation.AddItemActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/grey">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Количество проинструктированных"
+            android:text="@string/quProinfo"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/et_item_name"
             app:layout_constraintStart_toStartOf="@+id/et_item_name" />
 
         <TextView
             android:id="@+id/jobTexts"
-            android:text="Должность"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:text="@string/job"
+            android:visibility="gone" />
 
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Из них детей"
+            android:text="@string/child"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/et_brand"
             app:layout_constraintStart_toStartOf="@+id/et_brand" />
@@ -42,7 +42,7 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Время"
+            android:text="@string/time"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/dateTextView"
             app:layout_constraintStart_toStartOf="@+id/dateTextView" />
@@ -51,7 +51,7 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Адрес"
+            android:text="@string/adress"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/address"
             app:layout_constraintStart_toStartOf="@+id/address" />
@@ -60,7 +60,7 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Район"
+            android:text="@string/regon"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/dateTextView3"
             app:layout_constraintStart_toStartOf="@+id/dateTextView3" />

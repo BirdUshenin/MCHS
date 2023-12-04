@@ -1,7 +1,4 @@
-package com.example.mchs;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.mchs.presentation;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mchs.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -68,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
-    public Boolean validatePassword(){
+
+    public Boolean validatePassword() {
         String val = loginPassword.getText().toString();
         if (val.isEmpty()) {
             loginPassword.setError("Пароль не может быть пустым");
@@ -78,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
-    public void checkUser(){
+
+    public void checkUser() {
         String userUsername = loginUsername.getText().toString().trim();
         String userPassword = loginPassword.getText().toString().trim();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
@@ -86,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
+                if (snapshot.exists()) {
                     loginUsername.setError(null);
                     String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
                     if (passwordFromDB.equals(userPassword)) {

@@ -1,4 +1,4 @@
-package com.example.mchs;
+package com.example.mchs.data;
 
 public class HelperClass {
     String name, email, username, password;
