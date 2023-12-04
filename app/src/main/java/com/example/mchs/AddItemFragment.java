@@ -41,7 +41,6 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
     private Button buttonAddItem;
     private String selectedCity;
 
-
     public AddItemFragment() {
     }
 
@@ -94,7 +93,7 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
         final String brand = editTextBrand.getText().toString().trim();
         final String address = editAddress.getText().toString().trim();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbwjGrzGZAoaF7efObg0rB1LM50wMl6rJxu1X8X2hSFxb6imMBBBs8SPYctpIGxC1E60/exec",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbzMUK9OD1pa7qOJCFNMiGHyFnOr-vzFl3dxmjnX9OZGH65P_OUAqcasm_5_624OHezy/exec",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

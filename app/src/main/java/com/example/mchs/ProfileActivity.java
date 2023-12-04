@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,7 +22,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     TextView profileName, profileEmail, profileUsername, profilePassword, titleName;
     TextView titleUsername;
-    Button editProfile, buttonToForm, buttonExit;
+    ImageView buttonExit;
+    Button editProfile, buttonToForm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
