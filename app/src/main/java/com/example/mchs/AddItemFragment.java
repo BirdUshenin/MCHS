@@ -101,7 +101,7 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
                         loading.dismiss();
                         Toast.makeText(requireActivity(), response, Toast.LENGTH_LONG).show();
 
-                        Intent intent = new Intent(requireActivity(), MainActivity.class);
+                        Intent intent = new Intent(requireActivity(), ProfileActivity.class);
                         startActivity(intent);
                     }
                 },
