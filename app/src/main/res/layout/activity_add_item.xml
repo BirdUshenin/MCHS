@@ -22,6 +22,14 @@
             app:layout_constraintStart_toStartOf="@+id/et_item_name" />
 
         <TextView
+            android:id="@+id/jobTexts"
+            android:text="Должность"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -163,7 +171,6 @@
             android:layout_height="45dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/edit_text"
-
             android:ems="10"
             android:inputType="textPersonName"
             android:paddingStart="15dp"

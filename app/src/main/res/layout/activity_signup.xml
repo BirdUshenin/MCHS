@@ -53,7 +53,7 @@
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
-                android:hint="Код региона"
+                android:hint="Код региона, район"
                 android:drawableLeft="@drawable/city"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>

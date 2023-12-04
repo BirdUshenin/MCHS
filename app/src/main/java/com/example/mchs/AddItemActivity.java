@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -43,7 +44,7 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
 
     private EditText editTextItemName, editTextBrand, editAddress;
 
-    private TextView dateTextView2, dateTextView3;
+    private TextView dateTextView2, dateTextView3, jobTexts;
     private Button buttonAddItem;
     private String selectedCity, selectedCity2;
 
@@ -58,6 +59,7 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
         editAddress = findViewById(R.id.address);
         dateTextView2 = findViewById(R.id.dateTextView2);
         dateTextView3 = findViewById(R.id.dateTextView3);
+        jobTexts = findViewById(R.id.jobTexts);
 
         buttonAddItem = findViewById(R.id.btn_add_item);
         buttonAddItem.setOnClickListener(this);
@@ -105,7 +107,7 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void addItemToSheet() {
-        final ProgressDialog loading = ProgressDialog.show(this, "Adding Item", "Please wait");
+        final ProgressDialog loading = ProgressDialog.show(this, "Данные отправляются", "Пожалуйста, подождите..");
 
         final String name = editTextItemName.getText().toString().trim();
         final String brand = editTextBrand.getText().toString().trim();
@@ -113,8 +115,9 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
 
         final String names = dateTextView2.getText().toString().trim();
         final String region = dateTextView3.getText().toString().trim();
+        final String job = jobTexts.getText().toString().trim();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbzGcbNj8SOm-Pypnd92ir2P7R9xGwNxl8oXfcZXgqmqJTbpWjI-TrlG0qJKk_tCUwVV/exec",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbxG_coSAeomqcNSwZL6BT6oxDwnSwPtrNrlH2oA87vUL3S79uzqONz2YKrnHW6U9UNY/exec",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -147,6 +150,8 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
 
                 params.put("names", names);
                 params.put("region", region);
+                params.put("job", job);
+
 
 
                 return params;
@@ -173,8 +178,11 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
         Intent intent = getIntent();
         String nameUser = intent.getStringExtra("name");
         String email = intent.getStringExtra("email");
+
+        String job = intent.getStringExtra("job");
         dateTextView3.setText(email);
         dateTextView2.setText(nameUser);
+        jobTexts.setText(job);
     }
 
     private String getCurrentDate() {

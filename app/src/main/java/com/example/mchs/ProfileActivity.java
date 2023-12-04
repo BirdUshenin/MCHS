@@ -19,9 +19,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    TextView profileName, profileEmail, profileUsername, profilePassword;
-    TextView titleName, titleUsername;
-    Button editProfile, buttonToForm;
+    TextView profileName, profileEmail, profileUsername, profilePassword, titleName;
+    TextView titleUsername;
+    Button editProfile, buttonToForm, buttonExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
         titleUsername = findViewById(R.id.titleUsername);
         editProfile = findViewById(R.id.editButton);
         buttonToForm = findViewById(R.id.buttonToForm);
+        buttonExit = findViewById(R.id.buttonExit);
         showAllUserData();
 
         editProfile.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
                 Intent intent = new Intent(ProfileActivity.this, AddItemActivity.class);
                 intent.putExtra("name", profileName.getText().toString());
                 intent.putExtra("email", profileEmail.getText().toString());
+                intent.putExtra("job", titleName.getText().toString());
                 startActivity(intent);
             }
         });
@@ -69,6 +71,20 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+
+        buttonExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = getSharedPreferences("user_data", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.apply();
+
+                Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 
