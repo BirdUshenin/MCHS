@@ -101,6 +101,7 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
+
     }
 
     private void addItemToSheet() {
@@ -110,7 +111,10 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
         final String brand = editTextBrand.getText().toString().trim();
         final String address = editAddress.getText().toString().trim();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbwjGrzGZAoaF7efObg0rB1LM50wMl6rJxu1X8X2hSFxb6imMBBBs8SPYctpIGxC1E60/exec",
+        final String names = dateTextView2.getText().toString().trim();
+        final String region = dateTextView3.getText().toString().trim();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbzGcbNj8SOm-Pypnd92ir2P7R9xGwNxl8oXfcZXgqmqJTbpWjI-TrlG0qJKk_tCUwVV/exec",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -139,6 +143,11 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
                 params.put("brand", brand);
                 params.put("address", address);
                 params.put("city", selectedCity);
+                params.put("theme", selectedCity2);
+
+                params.put("names", names);
+                params.put("region", region);
+
 
                 return params;
             }
