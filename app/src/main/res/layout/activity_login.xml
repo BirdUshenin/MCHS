@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/black"
-    tools:context=".LoginActivity">
+    android:background="@color/grey"
+    tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Вход"
                 android:textSize="36sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
@@ -41,8 +41,8 @@
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Username"
-                android:drawableLeft="@drawable/ic_standart"
+                android:hint="Имя пользователя"
+                android:drawableLeft="@drawable/profile"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
 
@@ -53,16 +53,16 @@
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
-                android:hint="Password"
+                android:hint="Пароль"
                 android:inputType="textPassword"
-                android:drawableLeft="@drawable/ic_standart"
+                android:drawableLeft="@drawable/password"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Login"
+                android:text="Войти"
                 android:id="@+id/login_button"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/signupRedirectText"
-                android:text="Not yet registered? Sign Up"
+                android:text="Зарегистрироваться"
                 android:layout_gravity="center"
                 android:padding="8dp"
                 android:layout_marginTop="10dp"
