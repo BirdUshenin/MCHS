@@ -29,7 +29,7 @@
             android:id="@+id/titleName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:text="Name"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -43,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="username"
+            android:visibility="gone"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@id/titleName"
@@ -181,11 +182,12 @@
                 android:background="@color/lavender" />
 
             <LinearLayout
-                android:visibility="gone"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
+                android:visibility="gone"
                 android:padding="8dp">
 
                 <TextView
@@ -238,6 +240,14 @@
             app:layout_constraintEnd_toEndOf="@+id/editButton"
             app:layout_constraintStart_toStartOf="@+id/editButton"
             app:layout_constraintTop_toBottomOf="@+id/editButton" />
+
+        <Button
+            android:id="@+id/buttonExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выход"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
