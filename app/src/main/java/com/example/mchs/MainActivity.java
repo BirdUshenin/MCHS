@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
         signupRedirectText = findViewById(R.id.signupRedirectText);
+
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        SharedPreferences preferences = getSharedPreferences("user_data", MODE_PRIVATE);
+        if (preferences.contains("username")) {
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            startActivity(intent);
+            finish();
+        }
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,12 +94,16 @@ public class MainActivity extends AppCompatActivity {
                         String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
                         String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+
+                        saveUserData(nameFromDB, emailFromDB, usernameFromDB, passwordFromDB);
+
                         Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                         intent.putExtra("name", nameFromDB);
                         intent.putExtra("email", emailFromDB);
                         intent.putExtra("username", usernameFromDB);
                         intent.putExtra("password", passwordFromDB);
                         startActivity(intent);
+
                     } else {
                         loginPassword.setError("Invalid Credentials");
                         loginPassword.requestFocus();
@@ -100,6 +113,17 @@ public class MainActivity extends AppCompatActivity {
                     loginUsername.requestFocus();
                 }
             }
+
+            private void saveUserData(String name, String email, String username, String password) {
+                SharedPreferences preferences = getSharedPreferences("user_data", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("name", name);
+                editor.putString("email", email);
+                editor.putString("username", username);
+                editor.putString("password", password);
+                editor.apply();
+            }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }

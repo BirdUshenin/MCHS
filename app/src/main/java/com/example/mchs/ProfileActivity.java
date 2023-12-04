@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -52,18 +53,24 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        SharedPreferences preferences = getSharedPreferences("user_data", MODE_PRIVATE);
+        if (preferences.contains("username")) {
+            String storedName = preferences.getString("name", "");
+            String storedEmail = preferences.getString("email", "");
+            String storedUsername = preferences.getString("username", "");
+
+            titleName.setText(storedName);
+            profileName.setText(storedUsername);
+            profileEmail.setText(storedEmail);
+            // ...
+        } else {
+            Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
     }
-
-//    public void loadAddItemFragment(){
-//        AddItemFragment addItemFragment = new AddItemFragment();
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.fragmentContainer, addItemFragment);
-//        fragmentTransaction.addToBackStack(null);
-//        fragmentTransaction.commit();
-//    }
-
-
 
     public void showAllUserData(){
         Intent intent = getIntent();
