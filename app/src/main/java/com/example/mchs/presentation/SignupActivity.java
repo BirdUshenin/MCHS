@@ -2,6 +2,7 @@ package com.example.mchs.presentation;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,7 @@ public class SignupActivity extends AppCompatActivity {
     Button signupButton;
     FirebaseDatabase database;
     DatabaseReference reference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,17 +36,21 @@ public class SignupActivity extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                database = FirebaseDatabase.getInstance();
-                reference = database.getReference("users");
                 String name = signupName.getText().toString();
                 String email = signupEmail.getText().toString();
                 String username = signupUsername.getText().toString();
                 String password = signupPassword.getText().toString();
-                HelperClass helperClass = new HelperClass(name, email, username, password);
-                reference.child(username).setValue(helperClass);
-                Toast.makeText(SignupActivity.this, "Вы успешно зарегистрировались!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-                startActivity(intent);
+                if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+                    Toast.makeText(SignupActivity.this, "Заполните все поля!", Toast.LENGTH_SHORT).show();
+                } else {
+                    database = FirebaseDatabase.getInstance();
+                    reference = database.getReference("users");
+                    HelperClass helperClass = new HelperClass(name, email, username, password);
+                    reference.child(username).setValue(helperClass);
+                    Toast.makeText(SignupActivity.this, "Вы успешно зарегистрировались!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
             }
         });
         loginRedirectText.setOnClickListener(new View.OnClickListener() {
