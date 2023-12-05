@@ -1,11 +1,9 @@
 package com.example.mchs.presentation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -36,7 +35,6 @@ import java.util.Map;
 public class AddItemActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText editTextItemName, editTextBrand, editAddress;
-
     private TextView dateTextView2, dateTextView3, jobTexts;
     private Button buttonAddItem;
     private String selectedCity, selectedCity2;
@@ -65,6 +63,7 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
         Spinner spinnerCities = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.options, android.R.layout.simple_spinner_item);
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCities.setAdapter(adapter);
 
@@ -95,13 +94,10 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
             public void onNothingSelected(AdapterView<?> parentView) {
             }
         });
-
-
     }
 
     private void addItemToSheet() {
         final ProgressDialog loading = ProgressDialog.show(this, "Данные отправляются", "Пожалуйста, подождите..");
-
         final String name = editTextItemName.getText().toString().trim();
         final String brand = editTextBrand.getText().toString().trim();
         final String address = editAddress.getText().toString().trim();
@@ -110,7 +106,7 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
         final String region = dateTextView3.getText().toString().trim();
         final String job = jobTexts.getText().toString().trim();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbxG_coSAeomqcNSwZL6BT6oxDwnSwPtrNrlH2oA87vUL3S79uzqONz2YKrnHW6U9UNY/exec",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbyv8wjTBrAwg-itOv5XiC1jS6q0TMKz1AI78-iCeDTXpyb6OxdE8OGxwBx2rTqYWmBh/exec",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -119,6 +115,7 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
 
                         Intent intent = new Intent(AddItemActivity.this, ProfileActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 },
                 new Response.ErrorListener() {
@@ -145,8 +142,6 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
                 params.put("region", region);
                 params.put("job", job);
 
-
-
                 return params;
             }
         };
@@ -167,7 +162,7 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    public void showAllUsersData(){
+    public void showAllUsersData() {
         Intent intent = getIntent();
         String nameUser = intent.getStringExtra("name");
         String email = intent.getStringExtra("email");

@@ -36,9 +36,9 @@ public class EditProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (isNameChanged() || isPasswordChanged() || isEmailChanged()) {
-                    Toast.makeText(EditProfile.this, "Saved", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditProfile.this, "Изменения сохранены!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(EditProfile.this, "No Changes Found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditProfile.this, "Никаких изменений не найдено", Toast.LENGTH_SHORT).show();
                 }
             }
         });
