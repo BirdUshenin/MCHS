@@ -41,7 +41,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableStart="@drawable/person"
                 android:drawablePadding="8dp"
-                android:hint="@string/dolzhnost"
+                android:hint="Ваша должность"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/grey2" />
@@ -67,7 +67,7 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableStart="@drawable/profile"
                 android:drawablePadding="8dp"
-                android:hint="@string/name_user"
+                android:hint="Ваше ФИО"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/grey2" />

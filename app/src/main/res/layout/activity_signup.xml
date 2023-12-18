@@ -49,7 +49,7 @@
                     android:background="@drawable/custom_edittext"
                     android:drawableStart="@drawable/person"
                     android:drawablePadding="8dp"
-                    android:hint="@string/show_who"
+                    android:hint="Организация и должность"
                     android:padding="8dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey2" />
@@ -58,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="@string/exaple_1"
+                    android:text="Например: Инспекторский состав ФГПН \n или инструктор, администрация района"
                     android:textColor="@color/create_order_a"
                     android:textSize="12sp" />
 
@@ -91,7 +91,7 @@
                     android:background="@drawable/custom_edittext"
                     android:drawableLeft="@drawable/profile"
                     android:drawablePadding="8dp"
-                    android:hint="@string/FIO"
+                    android:hint="Полное ФИО"
                     android:padding="8dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey2" />
