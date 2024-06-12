@@ -1,4 +1,5 @@
 <h1 align="center" id="title">MCHS</h1>
+<h2 align="center" id="source">https://www.rustore.ru/catalog/app/com.example.mchs</h2>
 
 <p align="center"><img src="https://toplogos.ru/images/logo-mchs.jpg" alt="project-image"></p>
 
